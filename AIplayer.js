@@ -6,8 +6,8 @@ function AIplayer(placement){
   this.y       = (HEIGHT-this.height)/2,
 
   this.update = function(){
-      var desty = theBall.y - (this.height - theBall.side)*0.5;
-      this.y += (desty-this.y)* 0.1;
+      var desty = theBall.y - (this.height - theBall.side) * 0.5;
+      this.y += ((desty-this.y) % SPEED) / DIFF;
   },
 
   this.draw = function(){

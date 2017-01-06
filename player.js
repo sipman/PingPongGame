@@ -8,8 +8,8 @@ function player(placement){
   this.keydown = 40,
 
   this.update = function(){
-    if(keyState[this.keyup]){this.y -= 14};
-    if(keyState[this.keydown]){this.y += 14};
+    if(keyState[this.keyup]){this.y -= SPEED};
+    if(keyState[this.keydown]){this.y += SPEED};
 
     this.y = Math.max(Math.min(this.y, HEIGHT-this.height),0);
   },

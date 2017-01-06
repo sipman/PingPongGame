@@ -6,7 +6,7 @@ function ball(){
                     y: null,
                 },
   this.side   = 15,
-  this.speed  = 20,
+  this.speed  = 20 / (DIFF/2),
 
   this.serve = function(side){
     let r = Math.random();
@@ -20,6 +20,7 @@ function ball(){
     return pdle.x < ball.x+ball.side && pdle.y < ball.y+ball.side && ball.x < pdle.x+pdle.width && ball.y < pdle.y+pdle.height;
   },
   this.update = function(scoreboard){
+    this.speed  = 20 / (Math.sqrt(DIFF));
     this.x += this.vel.x;
     this.y += this.vel.y;
     if(0 > this.y || this.y+this.side > HEIGHT){
